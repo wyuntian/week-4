@@ -27,9 +27,17 @@
     Take a look at the image assignment-screen.png. Add HTML inside of the
     element <div class="sidebar"></div> and add CSS inside the file
     css/style.css to recreate this content in the browser. You do not need to
-    create the list of schools dynamically using the data—just hardcode three schools (in a future assignment, we will generate the list with the same data that we use to generate markers on our map!).
+    create the list of schools dynamically using the data—just hardcode three schools
+    (in a future assignment, we will generate the list with the same data that we use
+    to generate markers on our map!).
 
-    Start by trying to make it look as much like the image as possible.
+    Start by trying to make it look as much like the image as you can. Note: the blue
+    part of the select input is the default styling for Chrome on OSX—you do not need 
+    to change the styling of this to match, just go with the default on your system. 
+    You should be able to do most styling with `margin`, `padding`, `font-weight`, 
+    `font-size`, `background-color`, and `color`. Positioning the "Hide filters" button 
+    is a little trickier: Look into `float` or absolute positioning, but feel free to
+    try out a different approach.
 
     ## Make it look cool
 
@@ -46,6 +54,40 @@
       <!-- =====================
       Add HTML!
       ====================== -->
+      <div class="sidebar">
+        <html>
+        <head>
+        <link type="text/css" rel="main" href="main.css">
+        </head>
+        <body>
+          <h1>Filters</h1>
+          <h3>By Name</h3>
+              <form>
+                <br>
+              <input type="text" >
+            </form>
+          <h3>By Grade</h3>
+          <select>
+            <option>All Grades</option>
+          </select>
+          <HR>
+          <h1>Schools</h1>
+          <div style="width: 300px; height:200px; background-color:gainsboro">
+            <h3>Henry, CHarles W.</h3>
+            <h3 style="color:grey;">Elem/Middle</h3>
+            <p>601 Carpenter La.</p>
+            <p>19119-3405</p>
+          </div>
+          <div style="width: 300px; height:200px; background-color:gainsboro">
+            <h3>Universal Creighton Charter School</h3>
+            <h3 style="color:grey;">Elem/Middle</h3>
+            <p>5401 Tabor Ave</p>
+            <p>19120-3614</p>
+          </div>
+          <div style="width: 300px; height:200px; background-color:gainsboro">
+            <h3>Marshall, John</h3>
+            <h3 style="color:grey;">Elementary School</h3>
+          </div>
 
     </div>
     <!-- Map -->

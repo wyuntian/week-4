@@ -10,26 +10,29 @@
 
   This recipe, given to underscore's _.filter will return only the elements we want.
 ===================== */
-var isLengthOfFiveOrMore = function(str) {};
+var isLengthOfFiveOrMore = function(str) {
+   return str.length>=5
+};
 
 console.log("isLengthOfFiveOrMore success:",
   _.isEqual(_.filter(['this', 'is','a', 'test', 'testing'], isLengthOfFiveOrMore), ['testing']));
-
 
 /* =====================
   Now write a 'recipe' to console.log the double of a number (i.e. n * 2). Use the
   function you write along with underscore's _.each to log the double of every
   number in the provided array.
 ===================== */
-var logDouble = function(num) {};
+var logDouble = function(num) {
+  return num*2
+};
 var theArray = [1, 5, 20, 100];
-
+_.each(theArray, logDouble)
 
 /* =====================
   Given this already defined function, define fizzbuzzArray so that, when mapped
   over, it will equal ['fizz', 'buzz', 'fizzbuzz'];
 ===================== */
-var fizzbuzzArray = [];
+var fizzbuzzArray = [3,25,15];
 var fizzbuzzFunc = function(num) {
   var str = '';
   if (num % 3 === 0) { str = 'fizz'; }
@@ -37,7 +40,7 @@ var fizzbuzzFunc = function(num) {
   if (str === '') { str = num.toString(); }
   return str;
 };
-
+console.log((_.map(fizzbuzzArray, fizzbuzzFunc)))
 console.log("fizzbuzz success:",
   _.isEqual(_.map(fizzbuzzArray, fizzbuzzFunc), ['fizz', 'buzz', 'fizzbuzz']));
 
@@ -83,6 +86,25 @@ console.log("fizzbuzz success:",
 var phillySolarInstallationDataUrl = "https://raw.githubusercontent.com/CPLN690-MUSA610/datasets/master/json/philadelphia-solar-installations.json";
 var phillyCrimeDataUrl = "https://raw.githubusercontent.com/CPLN690-MUSA610/datasets/master/json/philadelphia-crime-snippet.json";
 var phillyBikeCrashesDataUrl = "https://raw.githubusercontent.com/CPLN690-MUSA610/datasets/master/json/philadelphia-bike-crashes-snippet.json";
+
+$.ajax(phillySolarInstallationDataUrl).done(function(ajaxResponseValue){
+  console.log(JSON.parse(ajaxResponseValue))
+  _.each(ajaxResponseValue, function(x){return x+2})
+});
+
+$.ajax(phillyCrimeDataUrl).done(function(ajaxResponseValue){
+  var computedValue = ajaxResponseValue
+  console.log(computedValue)
+  console.log(JSON.parse(ajaxResponseValue))
+  _.each(ajaxResponseValue, function(x){return x+2})
+});
+
+$.ajax(phillyBikeCrashesDataUrl).done(function(ajaxResponseValue){
+  var computedValue = ajaxResponseValue
+  console.log(computedValue)
+  console.log(JSON.parse(ajaxResponseValue))
+  _.each(ajaxResponseValue, function(x){return x+2})
+});
 
 
 /* =====================
